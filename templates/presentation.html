@@ -1,0 +1,48 @@
+{%- set bower = "bower/" -%}
+{%- set reveal = bower ~ "reveal.js/"-%}
+{%- set reveal_css = get_url(path=reveal ~ "css/reveal.css", trailing_slash=false) -%}
+{%- set reveal_js = get_url(path=reveal ~ "js/reveal.js", trailing_slash=false) -%}
+{%- set reveal_plugin = reveal ~ "plugin/" -%}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ config.title }}</title>
+    <link rel="stylesheet" href="{{ reveal_css }}">
+    <link rel="stylesheet" href="{{ get_url(path="slides.css", trailing_slash=false) }}">
+  </head>
+  <body>
+    {%- import "slide_macros.html" as slides -%}
+    {%- block reveal -%}
+    <main class="reveal">
+      <article class="slides">
+        {{ slides::slide(slide=page) }}
+        {%- set slide_pages = load_data(path=page.extra.slides_list) -%}
+        {% for slide_group in slide_pages -%}
+          <section>
+          {% for slide in slide_group -%}
+            {%- set page_path = page.extra.slides_directory ~ slide ~ ".md" -%}
+            {%- set page = get_page(path=page_path) -%}
+            {{ slides::slide(slide=page) | trim }}
+          {% endfor -%}
+          </section>
+        {% endfor -%}
+      </article>
+    </main>
+    <script src="{{reveal}}lib/js/head.min.js"></script>
+    <script src="{{ reveal_js }}"></script>
+    <script>
+      Reveal.initialize({
+        slideNumber: 'h.v',
+        history: false,
+        dependencies: [
+          {%- block dependencies -%}
+          { src: '{{ reveal_plugin | safe }}math/math.js', async: true },
+          { src: '{{ reveal_plugin | safe }}notes/notes.js', async: true }
+          {%- endblock dependencies -%}
+        ]
+      });
+    </script>
+    <script src="js/toggle-figure.js"></script>
+    {%- endblock reveal -%}
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ config.title }}</title>
+    {%- block stylesheet -%}
+    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) }}">
+    {%- endblock stylesheet -%}
+  </head>
+  <body>
+    {%- block content -%}
+      <main class="page-container page-content">
+        <h1 class="page-title">{{ config.title }}</h1>
+        <article class="page-content">
+          <p>Learn to develop video games with LUA and LOVE 2D!</p>
+          <ul>
+            <li>learn some LUA, a scripting language for games</li>
+            <li>discover the features of LOVE 2D</li>
+            <li>make a basic game</li>
+            <li>take away principles that can help in future projects</li>
+            <li>have fun!</li>
+         </ul>
+        </article>
+      </main>
+      <footer class="footer">
+      </footer>
+      {%- endblock content -%}
+  </body>
+</html>

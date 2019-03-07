@@ -1,0 +1,7 @@
+{% if inline %}
+$ {{ body | trim }} $
+{% else %}
+$$
+{{ body }}
+$$
+{% endif %}

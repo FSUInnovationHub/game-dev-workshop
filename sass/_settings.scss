@@ -1,0 +1,56 @@
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+// Background of the presentation
+$backgroundColor: #ffffff;
+$titleBackgroundColor: #A5257F;
+$subTitleBackgroundColor: #84A8CA;
+
+// Primary/body text
+$mainFont: 'Roboto', sans-serif;
+$mainFontSize: 42px;
+$mainColor: #333333;
+
+$mainTitleColor: #ffffff;
+$mainSubTitleColor: #ffffff;
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: 'Source Sans Pro', Impact, sans-serif;
+$headingColor: #333333;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.2em;
+$heading4Size: 1.00em;
+
+// Links and actions
+$linkColor: #ff4081;
+$linkColorHover: #ff8db3;
+$controlColor: lighten(#333333, 5%);
+$progressColor: #333333;
+
+// Text selection
+$selectionBackgroundColor: rgba(0,0,0,0.33);
+$selectionColor: #fff;
+
+// Code
+$codeFont: "Source Code Pro";
+$codeBackgroundColor: rgba(0,0,0,0.0392);
+
+$easer: linear;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+    background: $backgroundColor;
+}

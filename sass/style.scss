@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,400,400i,600,600i');
+
+@import 'settings';
+
+// rename values from settings so they are usable in typography
+$link-color: $linkColor;
+$text-color-light: $mainTitleColor;
+$text-color: $mainColor;
+$accent: $subTitleBackgroundColor;
+$footer-background: black;
+$background:#f9f8f7 ;
+
+@import 'typography';
+
+$max-page-width: 750px;
+
+.page-title {
+    font-size: 1.5rem !important;
+    line-spacing: 1;
+    font-weight: inherit;
+
+    &::before {
+        content: '' !important;
+    }
+
+    &::after {
+        display: block;
+        content: '=========================';
+    }
+}
+
+body {
+    margin: 0;
+}
+
+.page-container {
+    min-height: calc(95vh - 85px);
+    padding: 0 0.25em;
+    margin: auto;
+    max-width: $max-page-width;
+}
+
+
+.page-content {
+    font-size: 1rem;
+}
+
+:root {
+    background: $background;
+
+    @media only screen and (max-width: 400px) {
+        & { font-size: 10px; }
+    }
+
+    @media only screen and (max-width: 700px) {
+        & { font-size: 13px; }
+    }
+
+    font-size: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    box-sizing: border-box;
+}
+
+.footer {
+    font-size: 1rem;
+    color: $text-color-light;
+    background-color: $footer-background;
+
+    margin-top: 2em;
+    padding: 2em 2em;
+    min-height: calc(5vh + 85px);
+}
+
+.footer__item {
+    padding-right: 0.75em;
+
+    &::after {
+        content: ' /'
+    }
+
+    &:last-child {
+        padding-right: 0;
+
+        &::after {
+            content: ''
+        }
+    }
+}
+
+.footer__link {
+    color: lighten($link-color, 5%);
+
+    &:hover {
+        color: darken($link-color, 10%);
+    }
+}
+
+.footer__blurb {
+    max-width: $max-page-width;
+    margin: 0 auto;
+}

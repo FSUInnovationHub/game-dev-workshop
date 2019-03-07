@@ -1,0 +1,89 @@
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+p {
+    &:first-of-type {
+        margin-top: 0;
+    }
+}
+
+%link {
+    color: $link-color;
+    text-decoration-color: $accent;
+
+    &:hover {
+        text-decoration-color: $link-color;
+    }
+
+    &:visited {
+        color: darken($link-color, 30%);
+    }
+}
+
+.page-content {
+    padding-top: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    font-size: 1rem;
+
+    &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.05em;
+        font-weight: inherit;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding-bottom: 0;
+        &::before {
+            content: '# ';
+        }
+    }
+
+    hr {
+         overflow: visible;
+         padding: 0.5em 0;
+         border: none;
+         text-align: center;
+
+        &::after {
+            color: inherit;
+            content: '>>>';
+            display: inline-block;
+            position: relative;
+            left: -1em;
+            padding: 0 0.25em;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        li {
+            &::before {
+                content: '* ';
+            }
+        }
+    }
+
+    a {
+        @extend %link;
+    }
+
+    pre {
+        padding: 1em 0.5em;
+    }
+
+    blockquote {
+        &::before {
+            content: '> ';
+            left: -1em;
+            float: left;
+            position: relative;
+        }
+    }
+}

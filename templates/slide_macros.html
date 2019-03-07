@@ -1,0 +1,16 @@
+{% macro slide(slide) %}
+<section {%- if slide.extra.id %} id="{{ slide.extra.id }}"{%- endif -%}
+         {%- if slide.extra.class %} class="{{ slide.extra.class }}"{%- endif -%}
+         {%- if slide.extra.attributes -%}
+           {%- for attr in slide.extra.attributes %}{#
+               #} {{attr.attribute}}="{{attr.value}}"
+           {%- endfor -%}
+         {%- endif -%}
+         {%- if slide.extra.data -%}
+           {%- for data in slide.extra.data %}{#
+               #} data-{{data.attribute}}="{{data.value}}"
+           {%- endfor -%}
+         {%- endif -%}>
+  {{ slide.content | safe | trim }}
+</section>
+{% endmacro slide %}

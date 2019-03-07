@@ -1,0 +1,8 @@
+{
+  "name": "git-github",
+  "version": "1.1.0",
+  "dependencies": {
+    "reveal.js": "~3.6.0",
+    "highlightjs": "~9.0.0"
+  }
+}
