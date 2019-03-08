@@ -13,7 +13,7 @@ If you spot a bug, please flag it in an issue and feel free to open a pull reque
 Make sure to leave a clear and descriptive title using the present tense and imperative mood.  For example `Ensure compatibility with Windows & Mac for all commands shown`.  Do not end issue titles with a period, and only capitalize the first word except when referencing proper nouns or case-sensitive code.
 
 If you have a question, feel free to open an issue, but please check to see if your question has already been answered in another issue.  (Don't forget to search through closed issues too.)
-
+ 
 ## The Ground Rules
 
 1. Respect everyone's time as you respect your own
