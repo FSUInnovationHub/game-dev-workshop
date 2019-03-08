@@ -14,7 +14,7 @@ data = [
 ]
 +++
 
-# Game Development with Love2D
+# Game Development with LÖVE
 
 - Gwen Lofman
 - Nick D'Angelo
