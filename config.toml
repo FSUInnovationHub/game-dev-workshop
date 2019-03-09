@@ -19,15 +19,3 @@ highlight_theme = "material-dark"
 build_search_index = true
 
 [extra]
-slide_directory = "slides/"
-
-# Slides appear in the slide show according to the specified order and are only
-# rendered if they appear in this list.
-#
-# To put a slide in the slide show, add it's path relative to the slide
-# directory not including the ".md" extension.  Each markdown file in the list
-# corresponds to one horizontal slide.  Vertical slides can be created using
-# short-codes.
-slides = [
-
-]
