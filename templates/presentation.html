@@ -2,6 +2,7 @@
 {%- set reveal = bower ~ "reveal.js/"-%}
 {%- set reveal_css = get_url(path=reveal ~ "css/reveal.css", trailing_slash=false) -%}
 {%- set reveal_js = get_url(path=reveal ~ "js/reveal.js", trailing_slash=false) -%}
+{%- set reveal_head = get_url(path=reveal ~ "lib/js/head.min.js", trailing_slash=false) -%}
 {%- set reveal_plugin = reveal ~ "plugin/" -%}
 <html>
   <head>
@@ -28,7 +29,7 @@
         {% endfor -%}
       </article>
     </main>
-    <script src="{{reveal}}lib/js/head.min.js"></script>
+    <script src="{{reveal_head }}"></script>
     <script src="{{ reveal_js }}"></script>
     <script>
       Reveal.initialize({
